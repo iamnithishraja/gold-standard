@@ -508,6 +508,26 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
+
+          {/* Google Maps Embed */}
+          <motion.div
+            variants={fadeInUp}
+            className="mt-16"
+          >
+            <div className="max-w-[900px] mx-auto rounded-xl overflow-hidden shadow-lg shadow-[#D4AF37]/10 ring-1 ring-[#D4AF37]/20">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3589.8876!2d-80.1261!3d25.8876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ad0c0c0c0c0c%3A0x0!2s10295%20Collins%20Ave%2C%20Bal%20Harbour%2C%20FL!5e0!3m2!1sen!2sus!4v1234567890"
+                width="100%"
+                height="380"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Gold Standard Omakase Location"
+                className="w-full h-[350px] md:h-[400px]"
+              />
+            </div>
+          </motion.div>
         </motion.div>
       </section>
 
