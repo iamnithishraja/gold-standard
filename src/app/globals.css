@@ -35,7 +35,7 @@ body {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -124,11 +124,13 @@ body {
   color: #0a0a0a;
   font-weight: 500;
   transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
 }
 
 .btn-gold:hover {
   background: linear-gradient(135deg, #E5C76B 0%, #D4AF37 100%);
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 24px rgba(212, 175, 55, 0.35);
   transform: translateY(-2px);
 }
 
@@ -137,11 +139,13 @@ body {
   border: 1px solid #D4AF37;
   color: #D4AF37;
   transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
 }
 
 .btn-outline-gold:hover {
   background: rgba(212, 175, 55, 0.1);
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.18);
   transform: translateY(-2px);
 }
 
@@ -150,4 +154,107 @@ body {
   width: 60px;
   height: 1px;
   background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+}
+
+/* ── Shimmer animation ───────────────────────────────── */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.6s infinite;
+}
+
+/* ── Mobile-safe images ──────────────────────────────── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure next/image fill containers work on all viewports */
+.img-fill-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ── Reservation Widget Cards ────────────────────────── */
+.reservation-widget-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reservation-widget-card:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.06);
+}
+
+.reservation-widget-label {
+  color: #D4AF37;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-family: var(--font-sans);
+}
+
+.reservation-widget-body {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-bottom: 1.25rem;
+}
+
+.reservation-widget-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reservation-widget-name {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  margin-bottom: 0.2rem;
+}
+
+.reservation-widget-desc {
+  color: rgba(255, 255, 255, 0.30);
+  font-size: 0.75rem;
+  font-family: var(--font-sans);
+}
+
+.reservation-widget-placeholder {
+  width: 100%;
+  height: 140px;
+  border: 1px dashed rgba(212, 175, 55, 0.12);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 175, 55, 0.015);
+}
+
+/* ── Gallery mobile fix ──────────────────────────────── */
+#gallery .aspect-square {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  height: 0;
+}
+
+#gallery .aspect-square > * {
+  position: absolute;
+  inset: 0;
 }

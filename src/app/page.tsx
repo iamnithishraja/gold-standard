@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { useEffect, useState } from "react";
+import Gallery from "@/components/Gallery";
 
 // Animation variants
 const fadeInUp: Variants = {
@@ -175,7 +176,7 @@ export default function Home() {
               alt="Gold Standard Omakase Logo"
               width={120}
               height={120}
-              className="mx-auto opacity-90"
+              className="mx-auto opacity-90 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px]"
               priority
             />
           </motion.div>
@@ -242,7 +243,14 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-32 md:py-40 px-6 bg-[#0a0a0a]">
+      <motion.section
+        id="about"
+        className="py-32 md:py-40 px-6 bg-[#0a0a0a]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.9 }}
+      >
         <div className="max-w-7xl mx-auto">
           <motion.div
             className="grid md:grid-cols-2 gap-16 md:gap-24 items-center"
@@ -293,10 +301,16 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Experience Section */}
-      <section className="py-32 md:py-40 px-6 bg-[#080808] relative">
+      <motion.section
+        className="py-32 md:py-40 px-6 bg-[#080808] relative"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.9 }}
+      >
         {/* Subtle gradient overlay */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(212,175,55,0.03)_0%,_transparent_50%)]" />
         
@@ -357,7 +371,7 @@ export default function Home() {
                 Fish Flown Daily
               </h3>
               <p className="font-[family-name:var(--font-inter)] text-white/50 text-sm leading-relaxed">
-                The finest seafood sourced directly from Tsukiji and flown fresh to our kitchen each morning.
+                The finest seafood sourced directly from Toyosu Market and flown fresh to our kitchen each daily.
               </p>
             </motion.div>
 
@@ -381,14 +395,24 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
+
+      {/* Gallery Section */}
+      <Gallery />
 
       {/* Reservations Section */}
-      <section id="reservations" className="py-32 md:py-40 px-6 bg-[#0a0a0a] relative">
+      <motion.section
+        id="reservations"
+        className="py-32 md:py-40 px-6 bg-[#0a0a0a] relative"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.9 }}
+      >
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(212,175,55,0.05)_0%,_transparent_60%)]" />
         
         <motion.div
-          className="max-w-3xl mx-auto text-center relative z-10"
+          className="max-w-4xl mx-auto text-center relative z-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -412,26 +436,59 @@ export default function Home() {
 
           <motion.p
             variants={fadeInUp}
-            className="font-[family-name:var(--font-inter)] text-white/50 text-lg mb-12 max-w-xl mx-auto"
+            className="font-[family-name:var(--font-inter)] text-white/50 text-base mb-12 max-w-md mx-auto leading-relaxed"
           >
-            Join us for an unforgettable culinary journey. Reservations are required and can be made through Resy.
+            Seats are limited. Secure yours through your preferred platform.
           </motion.p>
 
-          <motion.div variants={fadeInUp}>
-            <a
-              href="https://resy.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-gold inline-block px-16 py-5 text-sm tracking-widest uppercase font-medium rounded-none"
+          {/* Reservation Buttons */}
+          <motion.div
+            variants={fadeInUp}
+            className="flex flex-col sm:flex-row gap-5 justify-center items-center"
+          >
+            <motion.a
+              href="#"
+              aria-label="Book on Resy"
+              className="btn-gold inline-block px-10 py-4 text-sm tracking-widest uppercase font-medium rounded-none min-w-[180px] text-center"
+              whileHover={{ scale: 1.04, boxShadow: "0 0 24px rgba(212,175,55,0.35)" }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
             >
               Book on Resy
-            </a>
+            </motion.a>
+            <motion.a
+              href="#"
+              aria-label="Book on SevenRooms"
+              className="btn-outline-gold inline-block px-10 py-4 text-sm tracking-widest uppercase font-medium rounded-none min-w-[180px] text-center"
+              whileHover={{ scale: 1.04, boxShadow: "0 0 18px rgba(212,175,55,0.15)" }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+            >
+              SevenRooms
+            </motion.a>
+            <motion.a
+              href="#"
+              aria-label="Book on OpenTable"
+              className="btn-outline-gold inline-block px-10 py-4 text-sm tracking-widest uppercase font-medium rounded-none min-w-[180px] text-center"
+              whileHover={{ scale: 1.04, boxShadow: "0 0 18px rgba(212,175,55,0.15)" }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+            >
+              OpenTable
+            </motion.a>
           </motion.div>
         </motion.div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 md:py-40 px-6 bg-[#080808]">
+      <motion.section
+        id="contact"
+        className="py-32 md:py-40 px-6 bg-[#080808]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.9 }}
+      >
         <motion.div
           className="max-w-4xl mx-auto"
           initial="hidden"
@@ -455,29 +512,29 @@ export default function Home() {
             {/* Contact Info */}
             <div className="space-y-8">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 border border-[#D4AF37]/30 rounded-full flex items-center justify-center text-[#D4AF37]">
+                <div className="w-12 h-12 border border-[#D4AF37]/30 rounded-full flex items-center justify-center text-[#D4AF37] flex-shrink-0">
                   <EmailIcon />
                 </div>
                 <div>
                   <p className="text-white/40 text-sm uppercase tracking-wider mb-1">Email</p>
                   <a
-                    href="mailto:reservations@goldstandardomakase.com"
-                    className="text-white/80 hover:text-[#D4AF37] transition-colors font-[family-name:var(--font-inter)]"
+                    href="mailto:omakase@goldstandardsushi.com"
+                    className="text-white/80 hover:text-[#D4AF37] transition-colors duration-300 font-[family-name:var(--font-inter)] break-all"
                   >
-                    reservations@goldstandardomakase.com
+                    omakase@goldstandardsushi.com
                   </a>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 border border-[#D4AF37]/30 rounded-full flex items-center justify-center text-[#D4AF37]">
+                <div className="w-12 h-12 border border-[#D4AF37]/30 rounded-full flex items-center justify-center text-[#D4AF37] flex-shrink-0">
                   <PhoneIcon />
                 </div>
                 <div>
                   <p className="text-white/40 text-sm uppercase tracking-wider mb-1">Phone</p>
                   <a
                     href="tel:+12125551234"
-                    className="text-white/80 hover:text-[#D4AF37] transition-colors font-[family-name:var(--font-inter)]"
+                    className="text-white/80 hover:text-[#D4AF37] transition-colors duration-300 font-[family-name:var(--font-inter)]"
                   >
                     +1 (212) 555-1234
                   </a>
@@ -490,17 +547,15 @@ export default function Home() {
               <p className="text-white/40 text-sm uppercase tracking-wider mb-6">Follow Us</p>
               <div className="flex gap-4">
                 <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#"
+                  aria-label="Instagram"
                   className="w-14 h-14 border border-white/10 rounded-full flex items-center justify-center text-white/60 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 transition-all duration-300"
                 >
                   <InstagramIcon />
                 </a>
                 <a
-                  href="https://maps.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#"
+                  aria-label="Google Maps"
                   className="w-14 h-14 border border-white/10 rounded-full flex items-center justify-center text-white/60 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 transition-all duration-300"
                 >
                   <MapIcon />
@@ -524,12 +579,12 @@ export default function Home() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Gold Standard Omakase Location"
-                className="w-full h-[350px] md:h-[400px]"
+                className="w-full h-[300px] md:h-[400px]"
               />
             </div>
           </motion.div>
         </motion.div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
       <footer className="py-16 px-6 bg-[#050505] border-t border-white/5">
@@ -552,17 +607,15 @@ export default function Home() {
             {/* Social Icons */}
             <div className="flex gap-4">
               <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
+                aria-label="Instagram"
                 className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/40 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 transition-all duration-300"
               >
                 <InstagramIcon />
               </a>
               <a
-                href="https://maps.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
+                aria-label="Google Maps"
                 className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/40 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 transition-all duration-300"
               >
                 <MapIcon />
@@ -570,7 +623,7 @@ export default function Home() {
             </div>
 
             {/* Copyright */}
-            <p className="font-[family-name:var(--font-inter)] text-white/30 text-sm">
+            <p className="font-[family-name:var(--font-inter)] text-white/30 text-sm text-center">
               © {new Date().getFullYear()} Gold Standard Omakase. All rights reserved.
             </p>
           </div>
