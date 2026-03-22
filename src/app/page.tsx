@@ -447,7 +447,9 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-5 justify-center items-center"
           >
             <motion.a
-              href="#"
+              href="http://resy.com/link?venue_id=81199"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Book on Resy"
               className="btn-gold inline-block px-10 py-4 text-sm tracking-widest uppercase font-medium rounded-none min-w-[180px] text-center"
               whileHover={{ scale: 1.04, boxShadow: "0 0 24px rgba(212,175,55,0.35)" }}
@@ -467,7 +469,9 @@ export default function Home() {
               SevenRooms
             </motion.a>
             <motion.a
-              href="#"
+              href="https://www.opentable.com/r/gold-standard-sushi?ref=1068"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Book on OpenTable"
               className="btn-outline-gold inline-block px-10 py-4 text-sm tracking-widest uppercase font-medium rounded-none min-w-[180px] text-center"
               whileHover={{ scale: 1.04, boxShadow: "0 0 18px rgba(212,175,55,0.15)" }}
@@ -533,10 +537,10 @@ export default function Home() {
                 <div>
                   <p className="text-white/40 text-sm uppercase tracking-wider mb-1">Phone</p>
                   <a
-                    href="tel:+12125551234"
+                    href="tel:+17866132310"
                     className="text-white/80 hover:text-[#D4AF37] transition-colors duration-300 font-[family-name:var(--font-inter)]"
                   >
-                    +1 (212) 555-1234
+                    +1 (786) 613-2310
                   </a>
                 </div>
               </div>
@@ -547,16 +551,20 @@ export default function Home() {
               <p className="text-white/40 text-sm uppercase tracking-wider mb-6">Follow Us</p>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/goldstandardsushi?igsh=MWkzbTJtYmFqdWJ2OA=="
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="w-14 h-14 border border-white/10 rounded-full flex items-center justify-center text-white/60 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 transition-all duration-300"
+                  className="w-14 h-14 border border-white/10 rounded-full flex items-center justify-center text-white/60 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 hover:scale-110 transition-all duration-300"
                 >
                   <InstagramIcon />
                 </a>
                 <a
-                  href="#"
+                  href="https://share.google/IWPdRUTsnttcajAES"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Google Maps"
-                  className="w-14 h-14 border border-white/10 rounded-full flex items-center justify-center text-white/60 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 transition-all duration-300"
+                  className="w-14 h-14 border border-white/10 rounded-full flex items-center justify-center text-white/60 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 hover:scale-110 transition-all duration-300"
                 >
                   <MapIcon />
                 </a>
@@ -569,19 +577,27 @@ export default function Home() {
             variants={fadeInUp}
             className="mt-16"
           >
-            <div className="max-w-[900px] mx-auto rounded-xl overflow-hidden shadow-lg shadow-[#D4AF37]/10 ring-1 ring-[#D4AF37]/20">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3589.8876!2d-80.1261!3d25.8876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ad0c0c0c0c0c%3A0x0!2s10295%20Collins%20Ave%2C%20Bal%20Harbour%2C%20FL!5e0!3m2!1sen!2sus!4v1234567890"
-                width="100%"
-                height="380"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Gold Standard Omakase Location"
-                className="w-full h-[300px] md:h-[400px]"
-              />
-            </div>
+            <a
+              href="https://share.google/IWPdRUTsnttcajAES"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open in Google Maps"
+              className="block group"
+            >
+              <div className="max-w-[900px] mx-auto rounded-xl overflow-hidden shadow-lg shadow-[#D4AF37]/10 ring-1 ring-[#D4AF37]/20 group-hover:ring-[#D4AF37]/40 group-hover:shadow-[#D4AF37]/20 transition-all duration-300">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d175413.19165208333!2d-80.30758824306027!3d25.77630683576043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ad66d5955555%3A0xc91d232fc7d789a!2sGold%20Standard%20Omakase!5e0!3m2!1sen!2sin!4v1774204532415!5m2!1sen!2sin"
+                  width="100%"
+                  height="380"
+                  style={{ border: 0, pointerEvents: "none" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Gold Standard Omakase Location"
+                  className="w-full h-[300px] md:h-[400px]"
+                />
+              </div>
+            </a>
           </motion.div>
         </motion.div>
       </motion.section>
@@ -607,16 +623,20 @@ export default function Home() {
             {/* Social Icons */}
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/goldstandardsushi?igsh=MWkzbTJtYmFqdWJ2OA=="
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/40 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 transition-all duration-300"
+                className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/40 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 hover:scale-110 transition-all duration-300"
               >
                 <InstagramIcon />
               </a>
               <a
-                href="#"
+                href="https://share.google/IWPdRUTsnttcajAES"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Google Maps"
-                className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/40 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 transition-all duration-300"
+                className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/40 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 hover:scale-110 transition-all duration-300"
               >
                 <MapIcon />
               </a>
