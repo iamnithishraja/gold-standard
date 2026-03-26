@@ -459,7 +459,9 @@ export default function Home() {
               Book on Resy
             </motion.a>
             <motion.a
-              href="#"
+              href="https://sevn.ly/x35f2Ifs"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Book on SevenRooms"
               className="btn-outline-gold inline-block px-10 py-4 text-sm tracking-widest uppercase font-medium rounded-none min-w-[180px] text-center"
               whileHover={{ scale: 1.04, boxShadow: "0 0 18px rgba(212,175,55,0.15)" }}
